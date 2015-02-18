@@ -1,0 +1,9 @@
+*build/*
+*.aux
+*.log
+*.out
+formelsammlung.pdf
+*.dvi
+*.synctex.*
+.DS_Store
+git.id
