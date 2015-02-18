@@ -1,0 +1,60 @@
+% Formelsammlung ...
+%
+% Geschrieben im SS 2014 an der TU München
+% von Markus Hofbauer und Kevin Meyer für LaTeX4EI (latex4ei.de)
+% Kontakt: latex@kevin-meyer.de oder via Kontaktformular auf http://latex4ei.de
+
+% Dokumenteinstellungen
+% ======================================================================
+
+
+% Dokumentklasse (Schriftgröße 6, DIN A4, Artikel)
+\documentclass[fs, footer]{latex4ei}
+
+\usepackage[european]{circuitikz}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usetikzlibrary{arrows, calc, intersections}
+\usepackage{hyperref}
+
+% tabularx definition
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{L}{@{\extracolsep\fill}X}
+
+% SI-Zahlen mit Komma als Dezimaltrenner
+\sisetup{locale=DE}
+\sisetup{range-phrase = \ldots}
+\sisetup{range-units = single}
+
+% SI-Einheiten
+\DeclareSIUnit \voltampere {VA}
+\DeclareSIUnit \var {Var}
+\DeclareSIUnit \newtonmeter {Nm}
+\DeclareSIUnit \voltsecond {Vs}
+\DeclareSIUnit \amperesecond {As}
+
+% Nicht neuen, sondern alten Vector benutzen
+\let\newvec = \vec
+\let\vec = \oldvec
+
+% Weitere Definitionen
+\renewcommand{\ggT}[1]{\ensuremath{\operatorname{ggT}\left\{#1\right\}}}
+
+% Eigener Inhalt für Center-Teil des Footers
+\fancyfoot[C]{von Markus Hofbauer und Kevin Meyer - Kontakt:  \href{mailto:latex@kevin-meyer.de}{\textit{latex@kevin-meyer.de}}}
+
+% Dokumentbeginn
+% ======================================================================
+\begin{document}
+
+\IfFileExists{git.id}{\input{git.id}}{}
+\ifdefined\HgRevision\fancyfoot[R]{Stand: \HgNiceDate \ (hg \HgRevision) \qquad \thepage}\fi
+
+% Aufteilung in Spalten
+\begin{multicols*}{4}
+\fstitle{Vorlage}
+
+\section{Inhalt}
+
+\end{multicols*}
+\end{document}
