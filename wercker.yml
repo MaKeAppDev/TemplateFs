@@ -1,0 +1,32 @@
+box: kevmeyer/latex-cmake
+# Build definition
+build:
+  # The steps that will be executed on build
+  steps:
+    - script:
+        name: check setup
+        code: |
+          echo $PATH
+          pdflatex --version
+#    - script:
+#        name: add scientific package
+#        code: |
+#          curl -O https://raw.githubusercontent.com/latex4ei/latex4ei-packages/master/scientific.sty
+    - script:
+        name: adding internal packages
+        code: |
+          curl -O $INT_PACKAGES_URL
+          tar -xzvf int-packages.tar.gz
+    - script:
+        name: generate pdf
+        code: |
+          mkdir -p build
+          cd build
+          cmake ..
+          make
+  after-steps:
+      # Use the build results
+      - script:
+          name: saving pdf
+          code: |
+            cp build/*.pdf $WERCKER_REPORT_ARTIFACTS_DIR
