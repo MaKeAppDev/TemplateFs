@@ -1,5 +1,5 @@
 #!/bin/sh
-# Write hd.id File
+# Write git.id File
 
 Os=`uname -s`
 
@@ -9,5 +9,6 @@ else
     DATEBIN=date
 fi
 
-hg parent --template '\\def\\HgNode\{{node|short}}\n\\def\\HgDate\{{date|isodate}}\n\\def\\HgAuthor\{{author|person}}\n\\def\\HgRevision\{{rev}}\n' > hg.id
-hg parent --template '{date|isodate}' | xargs -I var_d $DATEBIN -d "var_d" +\\def\\HgNiceDate{%-d.\ %B\ %Y\ um\ %H:%M\ Uhr} >> hg.id
+GITREV=$(git rev-list HEAD --count)
+echo "\\def\\GitRevision{$GITREV}"> git.id
+git show -s --format=%ci | xargs -I var_d $DATEBIN -d "var_d" +\\def\\GitNiceDate{%-d.\ %B\ %Y\ um\ %H:%M\ Uhr} >> git.id

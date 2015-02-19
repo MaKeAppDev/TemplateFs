@@ -48,7 +48,7 @@
 \begin{document}
 
 \IfFileExists{git.id}{\input{git.id}}{}
-\ifdefined\HgRevision\fancyfoot[R]{Stand: \HgNiceDate \ (hg \HgRevision) \qquad \thepage}\fi
+\ifdefined\GitRevision\fancyfoot[R]{Stand: \GitNiceDate \ (git \GitRevision) \qquad \thepage}\fi
 
 % Aufteilung in Spalten
 \begin{multicols*}{4}
