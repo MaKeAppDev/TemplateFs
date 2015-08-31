@@ -8,10 +8,6 @@ build:
         code: |
           echo $PATH
           pdflatex --version
-#    - script:
-#        name: add scientific package
-#        code: |
-#          curl -O https://raw.githubusercontent.com/latex4ei/latex4ei-packages/master/scientific.sty
     - script:
         name: adding internal packages
         code: |
@@ -30,3 +26,22 @@ build:
           name: saving pdf
           code: |
             cp build/*.pdf $WERCKER_REPORT_ARTIFACTS_DIR
+
+deploy:
+  steps:
+    - add-to-known_hosts:
+        hostname: lootsch.cetus.uberspace.de
+    - mktemp:
+        envvar: PRIVATEKEY_PATH
+    - create-file:
+        name: write key
+        filename: $PRIVATEKEY_PATH
+        content: $sshkey_PRIVATE
+        overwrite: true
+        hide-from-log: true
+    - script:
+        name: deploy pdf
+        code: |
+          pwd
+          ls -la
+          scp -i $PRIVATEKEY_PATH -o StrictHostKeyChecking=no -o UserKnownHostsFile=no build/formelsammlung.pdf lootsch@lootsch.cetus.uberspace.de:~/html/latex/$WERCKER_APPLICATION_NAME.pdf
