@@ -1,16 +1,14 @@
 % Formelsammlung ...
 %
 % Geschrieben im SS 2014 an der TU München
-% von Markus Hofbauer und Kevin Meyer für LaTeX4EI (latex4ei.de)
+% von Markus Hofbauer und Kevin Meyer für LaTeX4EI
+% based on template from www.latex4ei.de
 % Kontakt: latex@kevin-meyer.de oder via Kontaktformular auf http://latex4ei.de
 % Aktuelle Versionen auf https://makeappdev.github.io/TUM-Projekte/
 
 % Dokumenteinstellungen
 % ======================================================================
-
-
-% Dokumentklasse (Schriftgröße 6, DIN A4, Artikel)
-\documentclass[fs, footer]{latex4ei}
+\documentclass[german]{latex4ei/latex4ei_sheet}
 
 \usepackage[european]{circuitikz}
 \usepackage{tabularx}
@@ -42,21 +40,21 @@
 % Weitere Definitionen
 \renewcommand{\ggT}[1]{\ensuremath{\operatorname{ggT}\left\{#1\right\}}}
 
-% Eigener Inhalt für Center-Teil des Footers
-\fancyfoot[C]{von Markus Hofbauer und Kevin Meyer - Kontakt: \href{mailto:latex@kevin-meyer.de}{\textit{latex@kevin-meyer.de}} - Homepage: \url{https://makeappdev.github.io/TUM-Projekte/}}
+% Title
+\title{Vorlage}
+\author{Markus Hofbauer und Kevin Meyer}
+\myemail{latex@kevin-meyer.de}
+\mywebsite{https://makeappdev.github.io/TUM-Projekte/}
 
 % Dokumentbeginn
 % ======================================================================
 \begin{document}
 
-\IfFileExists{git.id}{\input{git.id}}{}
-\ifdefined\GitRevision\fancyfoot[R]{Stand: \GitNiceDate \ (git \GitRevision) \qquad \thepage}\fi
+\maketitle
 
-% Aufteilung in Spalten
-\begin{multicols*}{4}
-\fstitle{Vorlage}
+\IfFileExists{git.id}{\input{git.id}}{}
+\ifdefined\GitRevision\fancyfoot[R]{Stand: \GitNiceDate\ (git \GitRevision) \qquad \thepage}\fi
 
 \section{Inhalt}
 
-\end{multicols*}
 \end{document}

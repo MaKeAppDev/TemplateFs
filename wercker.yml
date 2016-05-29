@@ -9,11 +9,6 @@ build:
           echo $PATH
           pdflatex --version
     - script:
-        name: adding internal packages
-        code: |
-          curl -O $INT_PACKAGES_URL
-          tar -xzvf int-packages.tar.gz
-    - script:
         name: generate pdf
         code: |
           mkdir -p build
