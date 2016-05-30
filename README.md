@@ -7,8 +7,19 @@
 ### Links
 
 Fresh Development Version: [TUM-Projekte](https://makeappdev.github.io/TUM-Projekte/)  
-Public Version: [latex4ei.de](http://latex4ei.de)  
+Public Version: [latex4ei.de](http://latex4ei.de)
+
 
 ## Written by
 - Hofbauer, Markus
 - Meyer, Kevin
+
+## Optional: Build with CMake
+Download [UseLaTeX.cmake](https://cmake.org/Wiki/CMakeUserUseLATEX) and move to `/usr/share/cmake-X.X/Modules/.`  
+##### Steps to build:
+```shell
+mkdir build
+cd build
+cmake ..
+make
+```
