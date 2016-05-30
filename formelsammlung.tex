@@ -14,8 +14,6 @@
 \usepackage{tabularx}
 \usepackage{multirow}
 \usetikzlibrary{arrows, calc, intersections}
-\usepackage{hyperref}
-\urlstyle{sf}
 
 % tabularx definition
 \newcolumntype{C}{>{\centering\arraybackslash}X}
@@ -27,11 +25,11 @@
 \sisetup{range-units = single}
 
 % SI-Einheiten
-\DeclareSIUnit \voltampere {VA}
-\DeclareSIUnit \var {Var}
-\DeclareSIUnit \newtonmeter {Nm}
-\DeclareSIUnit \voltsecond {Vs}
-\DeclareSIUnit \amperesecond {As}
+\DeclareSIUnit\voltampere{VA}
+\DeclareSIUnit\var{Var}
+\DeclareSIUnit\newtonmeter{Nm}
+\DeclareSIUnit\voltsecond{Vs}
+\DeclareSIUnit\amperesecond{As}
 
 % Nicht neuen, sondern alten Vector benutzen
 \let\newvec = \vec
@@ -53,7 +51,7 @@
 \maketitle
 
 \IfFileExists{git.id}{\input{git.id}}{}
-\ifdefined\GitRevision\fancyfoot[R]{Stand: \GitNiceDate\ (git \GitRevision) \qquad \thepage}\fi
+\ifdefined\GitRevision\fancyfoot[R]{\EngGer{Last revised}{Stand}: \GitNiceDate\ (git \GitRevision) \qquad \thepage/\pageref{LastPage}}\fi
 
 \section{Inhalt}
 

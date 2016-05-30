@@ -3,4 +3,4 @@
 
 set -eu
 
-rm -rf *.aux *.log *.out formelsammlung.pdf
+rm -rf *.aux *.log *.out *.dvi *.synctex.* formelsammlung.pdf
