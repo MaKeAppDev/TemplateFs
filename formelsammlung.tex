@@ -48,10 +48,10 @@
 % ======================================================================
 \begin{document}
 
-\maketitle
-
 \IfFileExists{git.id}{\input{git.id}}{}
-\ifdefined\GitRevision\fancyfoot[R]{\EngGer{Last revised}{Stand}: \GitNiceDate\ (git \GitRevision) \qquad \thepage/\pageref{LastPage}}\fi
+\ifdefined\GitRevision\mydate{\GitNiceDate\ (git \GitRevision)}\fi
+
+\maketitle
 
 \section{Inhalt}
 
