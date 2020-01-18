@@ -7,7 +7,7 @@
 
 **Required custom Package on GitHub:** [LaTeX4Ei](https://github.com/latex4ei/latex4ei-packages)
 
-Public Version: [latex4ei.de](http://latex4ei.de)
+Public Version: [latex4ei.de](http://latex4ei.de) or [TUM-Projekte](https://makeappdev.github.io/TUM-Projekte/)
 
 ## Optional: Build with CMake
 
